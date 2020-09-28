@@ -3,10 +3,12 @@ require_relative 'locators'
 
 class Authorization
   include Capybara::DSL
+
   def initialize(email, password)
     @email = email
     @password = password
   end
+
   def auth_as_registered_user
     find(:css, AuthLocators::EMAIL).set(@email)
     find(:css, AuthLocators::PASSWORD).set(@password)
@@ -24,6 +26,7 @@ end
 
 class Registration
   include Capybara::DSL
+
   def initialize(surname, name, email, password)
     @surname = surname
     @name = name

@@ -11,3 +11,9 @@ module RegisterUserLocators
   USERNAME = 'input[formcontrolname="username"]'
   PASSWORD = 'input[formcontrolname="password"]'
 end
+
+module SearchPageLocators
+  MIN_PRICE = 'input[formcontrolname="min"]'
+  MAX_PRICE = 'input[formcontrolname="max"]'
+  OK_BUTTON = 'button[type="submit"]'
+end

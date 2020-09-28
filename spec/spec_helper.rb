@@ -1,6 +1,7 @@
 require 'capybara'
 require 'selenium/webdriver'
 require 'capybara/rspec'
+require_relative '../pages/search_page'
 require_relative '../pop_up_windows'
 require_relative '../locators'
 

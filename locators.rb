@@ -11,4 +11,3 @@ module RegisterUserLocators
   USERNAME = 'input[formcontrolname="username"]'
   PASSWORD = 'input[formcontrolname="password"]'
 end
-

@@ -1,5 +1,5 @@
 require 'capybara/dsl'
-require_relative 'locators'
+require_relative '../locators'
 
 class Authorization
   include Capybara::DSL

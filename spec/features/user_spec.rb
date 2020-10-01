@@ -6,7 +6,7 @@ feature 'Ruby: RSpec: practical task_2', type: :feature do
       visit('/')
       click_link('войдите в личный кабинет')
       click_link('Зарегистрироваться')
-      users_data = eval(File.open('new_users_data') { |file| file.read } )
+      users_data = eval(File.open('new_users_data', &:read))
       new_user = Registration.new(users_data[:surname], users_data[:name], users_data[:email], users_data[:password])
       new_user.register_new_user
 

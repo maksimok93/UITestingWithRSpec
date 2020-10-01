@@ -6,6 +6,11 @@ class SearchPage
     fill_in 'Я ищу...', with: product_title
     click_button('Найти')
   end
+
+  def add_product_to_cart(product)
+    # 'Блок питания BIOM FTR-120'
+    find("//*[contains(text(), #{product})]/../following-sibling::div[2]/div[2]/app-buy-button/button").click
+  end
 end
 
 class AdditionalOptions

@@ -21,4 +21,7 @@ end
 module CartLocators
   CHECKOUT = '//a[text()[contains(.,"Оформить заказ")]]'
   CONTINUE_SHOPPING = '//a[text()[contains(.,"Продолжить покупки")]]'
+  ACTIONS = 'button[aria-controls="shoppingCartActions"]'
+  REMOVE_PRODUCT = '//*[text()[contains(.,"Удалить из корзины")]]'
+  PLUS_ONE = 'button[aria-label="Добавить ещё один товар"]'
 end

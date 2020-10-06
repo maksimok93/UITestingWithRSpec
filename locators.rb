@@ -17,3 +17,8 @@ module SearchPageLocators
   MAX_PRICE = 'input[formcontrolname="max"]'
   OK_BUTTON = 'button[type="submit"]'
 end
+
+module CartLocators
+  CHECKOUT = '//a[text()[contains(.,"Оформить заказ")]]'
+  CONTINUE_SHOPPING = '//a[text()[contains(.,"Продолжить покупки")]]'
+end

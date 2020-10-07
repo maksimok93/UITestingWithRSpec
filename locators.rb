@@ -30,7 +30,7 @@ module CartLocators
   REMOVE_PRODUCT = "/../following-sibling::rz-cart-actions//*[contains(text(),'Удалить из корзины')]"
 end
 
-module TAGS
+module Tags
   EMPTY_CART = 'h4.cart-dummy__heading'
   TOTAL_PRICE = 'div.cart-receipt__sum-price'
 end

@@ -1,3 +1,4 @@
+require 'rspec'
 require 'capybara'
 require 'selenium/webdriver'
 require 'capybara/rspec'

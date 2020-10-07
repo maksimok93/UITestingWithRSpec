@@ -19,6 +19,7 @@ module SearchPageLocators
 end
 
 module CartLocators
+  OPENCART = 'a[href="https://rozetka.com.ua/cart/"]'
   CHECKOUT = '//a[text()[contains(.,"Оформить заказ")]]'
   CONTINUE_SHOPPING = '//a[text()[contains(.,"Продолжить покупки")]]'
   ACTIONS = 'button[aria-controls="shoppingCartActions"]'

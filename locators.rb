@@ -22,6 +22,15 @@ module CartLocators
   CHECKOUT = '//a[text()[contains(.,"Оформить заказ")]]'
   CONTINUE_SHOPPING = '//a[text()[contains(.,"Продолжить покупки")]]'
   ACTIONS = 'button[aria-controls="shoppingCartActions"]'
-  REMOVE_PRODUCT = '//*[text()[contains(.,"Удалить из корзины")]]'
   PLUS_ONE = 'button[aria-label="Добавить ещё один товар"]'
+
+  TITLE = "//a[@class='cart-product__title' and contains(text()"
+  REMOVE_CONTAINER = "/../following-sibling::rz-cart-actions//button[@aria-label='Удалить товар из корзины']"
+  OPTIONS = "/../../following-sibling::rz-cart-services//*[contains(text(),'Дополнительные услуги')]"
+  REMOVE_PRODUCT = "/../following-sibling::rz-cart-actions//*[contains(text(),'Удалить из корзины')]"
+end
+
+module TAGS
+  EMPTY_CART = 'h4.cart-dummy__heading'
+  TOTAL_PRICE = 'div.cart-receipt__sum-price'
 end

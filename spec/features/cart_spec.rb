@@ -1,25 +1,58 @@
 require_relative '../spec_helper'
 
 feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
-  before(:each) do
-    visit('/')
-    @search_amazfit = SearchPage.new
+  include Components
+  describe 'When to Cart added one product' do
+    before(:each) do
+      visit('/')
+      @search = SearchPage.new
+      @product = CartPage.new
+      @search.search_product('Amazfit GTR')
+      click_link(ProductsConstants::WATCH)
+      click_button('Купить')
+    end
+
+    it 'Verifies add product to the cart' do
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('3474')
+    end
+
+    it 'Verifies update product quantity in the cart' do
+      find(CartLocators::PLUS_ONE).click
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('6948')
+    end
+
+    it 'Verifies remove product from the cart' do
+      @product.remove_from_cart(ProductsConstants::WATCH)
+      expect(find(Tags::EMPTY_CART).text).to eq('Корзина пуста')
+    end
   end
 
-  describe 'When on Search Page' do
-    it 'Verifies adding product to the cart' do
-      @search_amazfit.search_product('Amazfit GTR')
-      click_link('Смарт-часы Amazfit GTR 47mm Aluminum alloy (514737)') # click link by link text
+  describe 'When to Cart added two products' do
+    before(:each) do
+      visit('/')
+      @search = SearchPage.new
+      @product = CartPage.new
+      @search.search_product('Amazfit GTR')
+      click_link(ProductsConstants::WATCH)
       click_button('Купить')
-      sleep 2
+      visit('/')
+      @search.search_product(ProductsConstants::SAMSUNG)
+      click_link(ProductsConstants::SAMSUNG)
+      click_button('Купить')
+    end
 
-      click_button('Продолжить покупки')
+    it 'Verifies adding two products to the cart' do
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('15473')
+    end
 
-      # find('/html/body/app-root/single-modal-window/div[2]/div[2]/rz-shopping-cart/div/div/div/a').click
-      # find('//a[contains(text(), "Оформить заказ")]').click
+    it 'Verifies choosing product additional option when two products' do
+      @product.choose_additional_options('Samsung', 'Настройка Smart TV Ultra')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('16472')
+    end
 
-      # find('//*[contains(text(), "Смарт-часы Amazfit GTR")]/../following-sibling::div[2]/div[2]/app-buy-button/button').click
-      # @search_amazfit.add_product_to_cart('Смарт-часы Amazfit GTR')
+    it 'Verifies remove one product from the cart when two products' do
+      @product.remove_from_cart(ProductsConstants::SAMSUNG)
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('3474')
     end
   end
 end

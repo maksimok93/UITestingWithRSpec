@@ -22,7 +22,6 @@ class CartPage
 
   def remove_from_cart(product_name)
     find(:xpath, "#{CartLocators::TITLE}, '#{product_name}')]#{CartLocators::REMOVE_CONTAINER}").click
-    # find(CartLocators::ACTIONS).click
     find(:xpath, "#{CartLocators::TITLE}, '#{product_name}')]#{CartLocators::REMOVE_PRODUCT}").click
   end
 end

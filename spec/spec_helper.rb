@@ -3,11 +3,9 @@ require 'rspec'
 require 'capybara'
 require 'selenium/webdriver'
 require 'capybara/rspec'
-require_relative '../pages/cart_page'
-require_relative '../pages/search_page'
-require_relative '../pages/pop_up_windows'
 require_relative '../locators'
 require_relative '../constants'
+Dir[File.join(__dir__, '../pages', '*.rb')].each { |file| require file }
 
 $search = SearchPage.new
 $options = AdditionalOptions.new

@@ -14,6 +14,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     diff-lcs (1.4.4)
+    execjs (2.7.0)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     nokogiri (1.10.10)
@@ -66,6 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  execjs
   rspec
   rubocop
   selenium-webdriver

@@ -1,8 +1,15 @@
+require 'execjs'
+require 'rspec'
 require 'capybara'
 require 'selenium/webdriver'
 require 'capybara/rspec'
-require_relative '../pop_up_windows'
 require_relative '../locators'
+require_relative '../constants'
+Dir[File.join(__dir__, '../pages', '*.rb')].each { |file| require file }
+
+$search = SearchPage.new
+$options = AdditionalOptions.new
+$product = CartPage.new
 
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)

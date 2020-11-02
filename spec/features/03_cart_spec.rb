@@ -19,6 +19,7 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies update product quantity in the cart' do
+      sleep 1
       find(CartLocators::PLUS_ONE).click
       sleep 2
       expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('9398')
@@ -44,7 +45,7 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies choosing product additional option when two products' do
-      # pending('Additional option sometimes non-clickable')
+      pending('Additional option sometimes non-clickable')
       $product.choose_additional_options('Samsung', 'Настройка Smart TV Ultra')
       expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('17697')
     end

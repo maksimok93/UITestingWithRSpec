@@ -8,6 +8,7 @@ gem 'execjs'
 gem 'pry'
 gem 'rake'
 gem 'rspec'
+gem 'rspec_junit_formatter'
 gem 'rubocop'
 gem 'selenium-webdriver'
 

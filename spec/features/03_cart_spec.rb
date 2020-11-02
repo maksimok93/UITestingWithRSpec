@@ -15,13 +15,13 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies add product to the cart' do
-      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('3474')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('4699')
     end
 
     it 'Verifies update product quantity in the cart' do
       find(CartLocators::PLUS_ONE).click
       sleep 2
-      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('6948')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('9398')
     end
 
     it 'Verifies remove product from the cart' do
@@ -40,20 +40,20 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies adding two products to the cart' do
-      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('15473')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('16698')
     end
 
     it 'Verifies choosing product additional option when two products' do
-      pending('Additional option sometimes non-clickable')
+      # pending('Additional option sometimes non-clickable')
       $product.choose_additional_options('Samsung', 'Настройка Smart TV Ultra')
-      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('16472')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('17697')
     end
 
     it 'Verifies remove one product from the cart when two products' do
       sleep 2
       $product.remove_from_cart(ProductsConstants::SAMSUNG)
       sleep 2
-      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('3474')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('4699')
     end
   end
 end

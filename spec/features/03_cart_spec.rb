@@ -26,6 +26,7 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies remove product from the cart' do
+      sleep 1
       $product.remove_from_cart(ProductsConstants::WATCH)
       expect(find(Tags::EMPTY_CART).text).to eq('Корзина пуста')
     end
@@ -51,9 +52,9 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies remove one product from the cart when two products' do
-      sleep 2
+      sleep 1
       $product.remove_from_cart(ProductsConstants::SAMSUNG)
-      sleep 2
+      sleep 3
       expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('4699')
     end
   end

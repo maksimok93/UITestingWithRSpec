@@ -2,7 +2,7 @@ module ProductsConstants
   XIAOMI = 'Силиконовый чехол BoxFace Xiaomi Mi Play'
   REDMI = 'Мобильный телефон Xiaomi Redmi Note 9 Pro 6/64GB Tropical Green'
   DELL = 'G3500F716S1TN2060L-10BK'
-  WATCH = 'Смарт-часы Amazfit GTR 47mm Stainless Steel (514738)'
+  WATCH = 'Смарт-часы Amazfit GTR 47mm Titanium (514739)'
   SAMSUNG = 'Телевизор Samsung UE50NU7002UXUA'
 end
 

@@ -1,4 +1,3 @@
-require 'execjs'
 require 'rspec'
 require 'capybara'
 require 'selenium/webdriver'

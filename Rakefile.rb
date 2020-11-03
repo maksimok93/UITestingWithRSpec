@@ -1,7 +1,13 @@
 require 'ci/reporter/rake/rspec'
 
-# ...
-# Rake code that creates a task called `:rspec`
-# ...
+desc 'Running tests'
+task :rspec do
+  sh 'bundle exec rspec spec'
+end
 
-task rspec: 'ci:setup:rspec'
+desc 'Rubocop linting task'
+task :rubocop do
+  sh 'rubocop'
+end
+
+task jenkins: %w(rspec rubocop)

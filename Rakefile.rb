@@ -1,7 +1,7 @@
-require 'ci/reporter/rake/rspec'
 
 desc 'Running tests'
 task :rspec do
+  sh 'export PATH=/usr/local/opt/ruby/bin:$PATH'
   sh 'bundle exec rspec spec'
 end
 

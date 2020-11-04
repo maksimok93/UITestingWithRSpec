@@ -84,7 +84,7 @@ DEPENDENCIES
   ci_reporter_rspec
   execjs
   pry
-  rake
+  rake (= 13.0.1)
   rspec
   rspec_junit_formatter
   rubocop

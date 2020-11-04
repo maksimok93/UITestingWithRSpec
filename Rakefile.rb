@@ -1,4 +1,3 @@
-
 desc 'Running tests'
 task :rspec do
   sh 'bundle exec rspec spec'
@@ -9,4 +8,4 @@ task :rubocop do
   sh 'rubocop'
 end
 
-task jenkins: %w(rspec rubocop)
+task jenkins: %w[rspec rubocop]

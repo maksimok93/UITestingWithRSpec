@@ -42,7 +42,7 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
 
     it 'Verifies adding two products to the cart' do
-      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('16698')
+      expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('16198')
     end
 
     it 'Verifies choosing product additional option when two products' do

@@ -3,10 +3,8 @@ require 'ci/reporter/rake/rspec'
 
 desc 'Running tests'
 
-task :rspec => 'ci:setup:rspec' do
-  sh 'bundle exec rspec spec'
-end
 
+task :spec => 'ci:setup:rspec'
 # task :rspec do
 #   sh 'bundle exec rspec spec'
 # end

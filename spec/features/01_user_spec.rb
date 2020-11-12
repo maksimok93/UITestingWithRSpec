@@ -2,6 +2,8 @@ require_relative '../spec_helper'
 
 feature 'Ruby: RSpec: practical task_2', type: :feature do
   describe 'When on Main Page' do
+    skip('Skip 01_user_spec')
+
     it 'Verifies creation of a new account' do
       visit('/')
       click_link('войдите в личный кабинет')

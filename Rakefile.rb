@@ -3,7 +3,8 @@ require 'rubocop/rake_task'
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(:spec) do |test|
-  test.pattern = "spec/features/*_spec.rb"
+  test.rspec_opts =  '--format documentation'
+  test.pattern = 'spec/features/*_spec.rb'
 end
 
 task :default => :spec

@@ -14,14 +14,14 @@
 │   ├── spec_helper.rb        &lt;= Entry point for all support code for specs
 ├── tests_data                &lt;= Test data for parameterized tests
 ├── .rubocop.yml              &lt;= Rubocop config file (to enable/disable certain rules/checks)
-├── constants.rb              &lt;= Static strings that used as arguments in automated tests
-├── Gemfile                   &lt;= Describe gem dependencies for current project
+├── constants.rb              &lt;= Static strings that are used as arguments in automated tests
+├── Gemfile                   &lt;= Describes gem dependencies for current project
 ├── locators.rb               &lt;= References to a corresponding element on the actual web page
-├── Rakefile.rb               &lt;= Specify Rake tasks and describe dependencies
-├── README.md                 &lt;= This file which documents the project.
+├── Rakefile.rb               &lt;= Specifies Rake tasks and describes dependencies
+├── README.md
 </code></pre>
 
-<h2>Technologies</h2>
+<h2>Libraries</h2>
 <p>The following main tools are used in this project:</p>
 <ul>
 <li>Capybara</li>
@@ -45,7 +45,11 @@ $ bundle exec rspec --format documentation
 <div class="highlight highlight-source-shell"><pre>
 $ rake default
 </pre></div>
-<p>You can also check correctness of code style with <a href="https://github.com/rubocop-hq/rubocop" rel="nofollow">RuboCop</a> by typing command below:</p>
+<p>You can also validate code style with <a href="https://github.com/rubocop-hq/rubocop" rel="nofollow">RuboCop</a> by typing command below:</p>
 <div class="highlight highlight-source-shell"><pre>
 $ rake rubocop
 </pre></div>
+
+<h2>Continuous Integration</h2>
+<p>If you want to run the tests with CI, use this shell script - <code>run_ci.sh</code></p>
+<p>By default, Test execution report can be viewed with RSpec JUnit formatter plugin (Jenkins) in this file - <code>results.xml</code></p>

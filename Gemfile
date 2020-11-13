@@ -2,11 +2,14 @@
 
 source 'https://rubygems.org'
 
-gem 'execjs'
-gem 'rspec'
 gem 'capybara'
-gem 'selenium-webdriver'
-gem 'rubocop'
+gem 'ci_reporter_rspec'
+gem 'execjs'
 gem 'pry'
+gem 'rake', '13.0.1'
+gem 'rspec', require: false, group: :test
+gem 'rspec_junit_formatter', require: false, group: :test
+gem 'rubocop'
+gem 'selenium-webdriver'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }

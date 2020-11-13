@@ -1,4 +1,3 @@
-require 'execjs'
 require 'rspec'
 require 'capybara'
 require 'selenium/webdriver'
@@ -12,6 +11,7 @@ $options = AdditionalOptions.new
 $product = CartPage.new
 
 Capybara.register_driver :selenium do |app|
+  Selenium::WebDriver::Chrome::Service.driver_path = '/usr/local/bin/chromedriver'
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 

@@ -10,6 +10,11 @@ feature 'Ruby: RSpec: practical task_2', type: :feature do
       $search.search_product('Xiaomi mi play')
       expect(page).to have_content(ProductsConstants::XIAOMI)
     end
+
+    it 'Verifies search without options' do
+      $search.search_product('garmin 235')
+      expect(page).to have_content('Garmin Forerunner 235 Black/Grey (010-03717-55)')
+    end
   end
 
   describe 'When on Search page' do

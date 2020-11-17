@@ -7,7 +7,7 @@ module CommonMethods
 
   def add_watch_to_cart
     visit('/')
-    $search.search_product('Amazfit GTR')
+    $search.search_product('Amazfit')
     click_link(ProductsConstants::WATCH)
     click_button('Купить')
   end

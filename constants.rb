@@ -5,11 +5,3 @@ module ProductsConstants
   WATCH = 'Смарт-часы Amazfit GTR 47mm Titanium (514739)'
   SAMSUNG = 'Телевизор Samsung UE50TU7002UXUA'
 end
-
-module Components
-  def get_value_from_element(locator)
-    # Type locator in next way: 'tag_name.class_name'
-    text = find(locator).text
-    text.scan(/\d/).join('')
-  end
-end

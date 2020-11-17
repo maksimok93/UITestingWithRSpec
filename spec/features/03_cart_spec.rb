@@ -1,15 +1,8 @@
 require_relative '../spec_helper'
 
-def add_watch_to_cart
-  visit('/')
-  $search.search_product('Amazfit GTR')
-  click_link(ProductsConstants::WATCH)
-  click_button('Купить')
-  end
-
-feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
-  include Components
-  describe 'When Cart is empty' do
+RSpec.describe 'Cart functionality', type: :feature do
+  include CommonMethods
+  context 'When Cart is empty' do
     before(:each) do
       add_watch_to_cart
     end
@@ -32,7 +25,7 @@ feature 'RSpec: practical task_2, Rozetka UI Testing', type: :feature do
     end
   end
 
-  describe 'When to Cart added two products' do
+  context 'When to Cart added two products' do
     before(:each) do
       add_watch_to_cart
       visit('/')

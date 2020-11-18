@@ -6,7 +6,7 @@ RSpec.describe 'Create new user', type: :feature do
       visit('/')
       click_link('войдите в личный кабинет')
       click_link('Зарегистрироваться')
-      users_data = eval(File.open('tests_data/users_data', &:read))
+      users_data = eval(File.open('tests_data/users_data', 'r:UTF-8', &:read))
       new_user = UserActions.new(users_data[:surname], users_data[:name], users_data[:email], users_data[:password])
       new_user.register_new_user
       expect(page).to have_xpath(AuthLocators::AUTH_USERNAME)

@@ -1,6 +1,6 @@
 {
-  surname: 'Shevchenko',
-  name: 'Dmytro',
+  surname: 'Шевченко',
+  name: 'Дмитро',
   email: 'newtest@newtest.com',
   password: 'Dfght4522'
 }

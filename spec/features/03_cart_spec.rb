@@ -39,6 +39,7 @@ RSpec.describe 'Cart functionality', type: :feature do
     end
 
     it 'Verifies choosing product additional option' do
+      sleep 2
       $product.choose_additional_options('Samsung', 'Настройка Smart TV Ultra')
       expect(get_value_from_element(Tags::TOTAL_PRICE)).to eq('16797')
     end

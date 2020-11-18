@@ -33,9 +33,9 @@ module CartLocators
   ACTIONS = 'button[aria-controls="shoppingCartActions"]'
   PLUS_ONE = 'button[aria-label="Добавить ещё один товар"]'
   TITLE = "//a[@class='cart-product__title' and contains(text()"
-  REMOVE_CONTAINER = "/../following-sibling::rz-cart-actions//button[@aria-label='Удалить товар из корзины']"
+  REMOVE_CONTAINER = "/../following-sibling::rz-context-menu//button"
   OPTIONS = "/../../following-sibling::rz-cart-services//*[contains(text(),'Дополнительные услуги')]"
-  REMOVE_PRODUCT = "/../following-sibling::rz-cart-actions//*[contains(text(),'Удалить из корзины')]"
+  REMOVE_PRODUCT = "/../following-sibling::rz-context-menu//ul//li//rz-trash-icon//button"
 end
 
 module Tags

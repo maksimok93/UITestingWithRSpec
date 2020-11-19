@@ -4,6 +4,7 @@ module CabinetLocators
   AGREE = 'label[for="agreeRemove"]'
   REASON_FIELD = 'textarea[id="removeReason"]'
   CONFIRM_DELETE = '//button[@type="submit" and contains(text(), "Удалить аккаунт")]'
+  EXIT = '//main-page-sidebar//ul//li/a[contains(text(),"Выход")]'
 end
 
 module AuthLocators

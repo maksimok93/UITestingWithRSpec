@@ -43,7 +43,6 @@ class UserActions
   end
 
   def delete_user
-    find(:css, CabinetLocators::PERSONAL).click
     find(:xpath, CabinetLocators::DELETE_ACCOUNT).click
     find(:css, CabinetLocators::AGREE).click
     find(:css, CabinetLocators::REASON_FIELD).set('test')

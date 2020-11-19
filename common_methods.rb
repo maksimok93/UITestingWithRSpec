@@ -5,6 +5,10 @@ module CommonMethods
     text.scan(/\d/).join('')
   end
 
+  def get_product_price(product_name)
+    find(:xpath, "//span[text()[contains(.,'#{product_name}')]]/../following-sibling::#{ProductAttributes::PRICE}").text
+  end
+
   def add_watch_to_cart
     visit('/')
     $search.search_product('Amazfit')

@@ -17,8 +17,7 @@ RSpec.describe 'Delete user', type: :feature do
       visit('/')
       click_link('Мои заказы')
       find(:css, CabinetLocators::PERSONAL).click
-      user = UserActions.new
-      user.delete_user
+      @user.delete_user
       expect(page).to have_content('войдите в личный кабинет')
     end
   end

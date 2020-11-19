@@ -15,10 +15,6 @@ RSpec.describe 'Create new user', type: :feature do
     after(:each) do
       visit('https://rozetka.com.ua/cabinet/personal-information/')
       @user.delete_user
-      # find(:xpath, CabinetLocators::DELETE_ACCOUNT).click
-      # find(:css, CabinetLocators::AGREE).click
-      # find(:css, CabinetLocators::REASON_FIELD).set('test')
-      # find(:xpath, CabinetLocators::CONFIRM_DELETE).click
     end
   end
 end

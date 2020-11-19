@@ -25,7 +25,7 @@ RSpec.describe 'Cart functionality', type: :feature do
     end
   end
 
-  context 'When to Cart added two products' do
+  context 'When two products added to cart' do
     before(:each) do
       add_watch_to_cart
       visit('/')

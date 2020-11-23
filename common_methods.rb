@@ -15,4 +15,10 @@ module CommonMethods
     click_link(ProductsConstants::WATCH)
     click_button('Купить')
   end
+
+  def create_new_account
+    users_data = eval(File.open('tests_data/users_data', 'r:UTF-8', &:read))
+    user = UserActions.new(users_data[:surname], users_data[:name], users_data[:email], users_data[:password])
+    user.register_new_user
+  end
 end

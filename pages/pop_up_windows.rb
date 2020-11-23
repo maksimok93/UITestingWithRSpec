@@ -24,10 +24,10 @@ class Authorization
   end
 end
 
-class Registration
+class UserActions
   include Capybara::DSL
 
-  def initialize(surname, name, email, password)
+  def initialize(surname = nil, name = nil, email = nil, password = nil)
     @surname = surname
     @name = name
     @email = email
@@ -40,5 +40,12 @@ class Registration
     find(:css, RegisterUserLocators::USERNAME).set(@email)
     find(:css, RegisterUserLocators::PASSWORD).set(@password)
     click_button('Зарегистрироваться')
+  end
+
+  def delete_user
+    find(:xpath, CabinetLocators::DELETE_ACCOUNT).click
+    find(:css, CabinetLocators::AGREE).click
+    find(:css, CabinetLocators::REASON_FIELD).set('test')
+    find(:xpath, CabinetLocators::CONFIRM_DELETE).click
   end
 end

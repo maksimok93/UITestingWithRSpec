@@ -4,6 +4,8 @@ require 'selenium/webdriver'
 require 'capybara/rspec'
 require_relative '../locators'
 require_relative '../constants'
+require_relative '../common_methods'
+
 Dir[File.join(__dir__, '../pages', '*.rb')].each { |file| require file }
 
 $search = SearchPage.new

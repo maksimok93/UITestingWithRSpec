@@ -19,5 +19,5 @@ module Config
 end
 
 module Alerts
-  USER_EXISTS = 'Пользователь с логином newtest2@newtest.com уже зарегистрирован'
+  USER_EXISTS = 'Пользователь с логином newtest3@newtest.com уже зарегистрирован'
 end

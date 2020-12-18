@@ -13,10 +13,10 @@ $options = AdditionalOptions.new
 $product = CartPage.new
 
 Capybara.register_driver :selenium do |app|
-  Selenium::WebDriver::Chrome::Service.driver_path = '/usr/local/bin/chromedriver'
+  Selenium::WebDriver::Chrome::Service.driver_path = Config::DRIVER
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.run_server = false
 Capybara.default_driver = :selenium
-Capybara.app_host = 'https://rozetka.com.ua'
+Capybara.app_host = Config::HOME_PAGE

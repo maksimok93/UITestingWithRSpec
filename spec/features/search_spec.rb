@@ -21,7 +21,7 @@ RSpec.describe 'Search functionality', type: :feature do
   end
 
   it 'Verifies product search with specific manufacturer' do
-    # skip "Stale element reference: element is not attached to the page document"
+    pending 'Stale element reference: element is not attached to the page document'
     $search.search_product('G3 3500')
     $options.choose_manufacturer_checkbox('Dell')
     expect(page).to have_content(ProductsConstants::DELL)

@@ -6,7 +6,7 @@ RSpec.describe 'Delete user', type: :feature do
     before(:each) do
       page.windows[0].maximize
       visit('/')
-      click_link('войдите в личный кабинет')
+      find(:xpath, CabinetLocators::ENTER).click
       click_link('Зарегистрироваться')
       create_new_account
     end

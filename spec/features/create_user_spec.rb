@@ -2,10 +2,10 @@ require_relative '../spec_helper'
 
 RSpec.describe 'Create new user', type: :feature do
   include CommonMethods
-  context 'When on Main page' do
+  context 'When a new account is creating' do
     before(:each) do
       visit('/')
-      click_link('войдите в личный кабинет')
+      find(:xpath, CabinetLocators::ENTER).click
       click_link('Зарегистрироваться')
     end
 
@@ -15,9 +15,37 @@ RSpec.describe 'Create new user', type: :feature do
     end
 
     after(:each) do
-      visit('https://rozetka.com.ua/cabinet/personal-information/')
-      del = UserActions.new
-      del.delete_user
+      visit(Config::PERSONAL_INFO)
+      user = UserActions.new
+      user.delete_user
+    end
+  end
+
+  context 'When account already created' do
+    skip('User authorization action is not stable: fill email field')
+    before(:each) do
+      visit('/')
+      find(:xpath, CabinetLocators::ENTER).click
+      find(:xpath, RegisterUserLocators::GO_TO_REGISTER).click
+      create_new_account
+      find(:xpath, CabinetLocators::EXIT).click
+    end
+
+    it 'Verifies that account already exists' do
+      find(:xpath, CabinetLocators::ENTER).click
+      find(:xpath, RegisterUserLocators::GO_TO_REGISTER).click
+      create_new_account
+      expect(page).to have_content(Alerts::USER_EXISTS)
+    end
+
+    after(:each) do
+      visit('/')
+      find(:xpath, CabinetLocators::ENTER).click
+      authorize_as_user
+      sleep 2
+      visit(Config::PERSONAL_INFO)
+      user = UserActions.new
+      user.delete_user
     end
   end
 end

@@ -1,4 +1,5 @@
 module CabinetLocators
+  ENTER = '//button[text()[contains(.,"войдите в личный кабинет")]]'
   DELETE_ACCOUNT = '//button[text()[contains(.,"Удалить аккаунт")]]'
   PERSONAL = 'p[class="cabinet-user__name"]'
   AGREE = 'label[for="agreeRemove"]'
@@ -15,6 +16,7 @@ module AuthLocators
 end
 
 module RegisterUserLocators
+  GO_TO_REGISTER = '//a[text()[contains(.,"Зарегистрироваться")]]'
   SURNAME = 'input[formcontrolname="surname"]'
   NAME = 'input[formcontrolname="name"]'
   USERNAME = 'input[formcontrolname="username"]'

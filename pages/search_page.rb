@@ -14,6 +14,10 @@ class AdditionalOptions
     find(:css, "label[for='#{manufacturer}']").set(true)
   end
 
+  def choose_additional_option(option)
+    find(:xpath, "//label[text()[contains(.,'#{option}')]]").set(true )
+  end
+
   def select_price_range(min, max)
     find(:css, SearchPageLocators::MIN_PRICE).set(min)
     find(:css, SearchPageLocators::MAX_PRICE).set(max)
